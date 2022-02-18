@@ -3,7 +3,7 @@
 
 #4153 직각삼각형
 while True:
-    A,B,C = map(int,input().split())
+    A,B,C = map(int, input().split())
     if A==B==C==0:
         break
     else:
@@ -15,3 +15,10 @@ while True:
             print('right')
         else:
             print('wrong')
+
+#3053 택시 기하학
+import math
+
+R = int(input())
+print(math.pi*(R**2))
+print(2*(R**2)) # 택시 기하학의 원=내가 아는 마름모 인듯?!
