@@ -15,6 +15,26 @@ elif x>=hw and y<=hh:
 elif x>=hw and y>=hh:
     print(min(w-x,h-y))
 
+#3009 네 번째 점
+x_list = []
+y_list = []
+for i in range(3):
+    x, y = input().split()
+    x_list.append(x)
+    y_list.append(y)
+
+for j in x_list:
+    if x_list.count(j) == 1:
+        X = j
+        break
+
+for k in y_list:
+    if y_list.count(k) == 1:
+        Y = k
+        break
+
+print(X, Y)
+
 #4153 직각삼각형
 while True:
     A,B,C = map(int, input().split())
