@@ -19,6 +19,9 @@ for i in num_list:
     else:
         pass
 
+last_list = [int(k) for k in num_list if int(k) not in except_list]
+print(len(last_list))
+
 #2581
 M = int(input())
 N = int(input())
@@ -34,15 +37,14 @@ for i in range(M,N+1):
         except_list.append(i)
     else:
         pass
+
 num_list = [k for k in range(M, N + 1) if k not in except_list]
+
 if len(num_list) == 0:
     print(-1)
 else:
     print(sum(num_list))
     print(min(num_list))
-
-last_list = [int(k) for k in num_list if int(k) not in except_list]
-print(len(last_list))
 
 #1085 직사각형에서 탈출
 x, y, w, h = map(int,input().split())
