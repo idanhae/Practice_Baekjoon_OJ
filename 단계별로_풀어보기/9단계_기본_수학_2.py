@@ -19,6 +19,28 @@ for i in num_list:
     else:
         pass
 
+#2581
+M = int(input())
+N = int(input())
+
+except_list=[]
+for i in range(M,N+1):
+    if i > 2:
+        for j in range(2,i):
+            if i%j==0:
+                except_list.append(i)
+                break
+    elif i == 1:
+        except_list.append(i)
+    else:
+        pass
+num_list = [k for k in range(M, N + 1) if k not in except_list]
+if len(num_list) == 0:
+    print(-1)
+else:
+    print(sum(num_list))
+    print(min(num_list))
+
 last_list = [int(k) for k in num_list if int(k) not in except_list]
 print(len(last_list))
 
