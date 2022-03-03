@@ -1,6 +1,27 @@
 # 단계별로 풀어보기
 ## 9단계 기본 수학 2
 
+#1978
+N = int(input())
+num_list = input().split()
+except_list = []
+
+for i in num_list:
+    i = int(i)
+    if i > 2:
+        for j in range(2,i):
+            remainder = i%j
+            if remainder == 0:
+                except_list.append(i)
+                break
+    elif i == 1:
+        except_list.append(i)
+    else:
+        pass
+
+last_list = [int(k) for k in num_list if int(k) not in except_list]
+print(len(last_list))
+
 #1085 직사각형에서 탈출
 x, y, w, h = map(int,input().split())
 hw = w/2
