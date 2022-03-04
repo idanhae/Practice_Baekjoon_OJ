@@ -99,4 +99,22 @@ while True:
 import math
 R = int(input())
 print(math.pi*(R**2))
-print(2*(R**2)) # 택시 기하학의 원=내가 아는 마름모 인듯?!
+print(2*(R**2)) # 택시 기하학의 원=내가 아는 정사각형 인듯?!
+
+#1002 터렛(두 원의 위치 관계)
+import math
+T = int(input())
+
+for i in range(T):
+    x1, y1, r1, x2, y2, r2 = map(int,input().split())
+    distance = math.sqrt((x1-x2)**2+(y1-y2)**2)
+    R = r1+r2
+    r = abs(r1-r2)
+    if (x1,y1,r1)==(x2,y2,r2):
+        print(-1)
+    elif distance > R or distance < r:
+        print(0)
+    elif distance== R or distance == r:
+        print(1)
+    else:
+        print(2)
