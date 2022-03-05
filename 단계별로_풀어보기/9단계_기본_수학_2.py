@@ -46,6 +46,20 @@ else:
     print(sum(num_list))
     print(min(num_list))
 
+#11653 소인수분해
+N = int(input())
+
+quo = 2
+if N == 1:
+    pass
+else:
+    while N > 1:
+        if N % quo == 0:
+            N /= quo
+            print(quo)
+        else:
+            quo += 1
+
 #1085 직사각형에서 탈출
 x, y, w, h = map(int,input().split())
 hw = w/2
