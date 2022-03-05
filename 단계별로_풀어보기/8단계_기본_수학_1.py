@@ -46,18 +46,35 @@ print(math.ceil((V-A)/D)+1)
 #10250 ACM 호텔
 import sys
 T = int(input())
-
 for i in range(T):
     H,W,N = map(int,sys.stdin.readline().split())
-    if N%H == 0:
+    if N%H == 0: # 손님 수가 층수의 배수일 때 주의
         floor = H
         room = N // H
     else:
         floor = N%H
         room = N//H+1
-    print(floor*100+room)
+    print(floor*100+room) # 따로 복잡하게 형식 지정할 필요없이 이렇게 하면 간단하게 호텔방 호수 형식으로 나타낼 수 있음
 
-# 2839 설탕배달
+#2775 부녀회장이 될테야
+T = int(input())
+for i in range(T):
+    k = int(input())
+    n = int(input())
+
+    apt = []
+    apt.append([1,2,3,4,5,6,7,8,9,10,11,12,13,14]) # floor 0
+    for floor in range(k+1): # floors range 1~k
+        new_floor = []
+        people = 0
+        for room in range(n): # range 0~n-1
+             people += apt[floor][room]
+             new_floor.append(people)
+        apt.append(new_floor)
+
+    print(apt[k][n-1]) # ex) 1층 2호면 apt[1][1]을 찾아야 하니까
+
+#2839 설탕배달
 N = int(input())
 
 sum = 0
