@@ -60,6 +60,19 @@ else:
         else:
             quo += 1
 
+#1929 소수 구하기
+import sys
+
+N,M = map(int,sys.stdin.readline().split())
+
+cnt = [0]*(M+1) # N < M
+for i in range(2,M+1): # 2부터 시작해야 4가 빠짐
+    if cnt[i] == 0:
+        if N <= i <= M: # 조건 설정 잘 해주기!
+            print(i)
+        for j in range(i,M+1,i): # i의 배수 지우기
+            cnt[j] = 1
+
 #1085 직사각형에서 탈출
 x, y, w, h = map(int,input().split())
 hw = w/2
