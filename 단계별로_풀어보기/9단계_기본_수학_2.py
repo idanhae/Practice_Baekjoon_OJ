@@ -145,3 +145,23 @@ for i in range(T):
         print(1)
     else:
         print(2)
+
+#9020
+T = int(input())
+for i in range(T):
+    even = int(input())
+    sosu = [0]*(even)
+    prime = []
+    for i in range(2,even):
+        if sosu[i] == 0:
+            prime.append(i)
+            for j in range(i, even, i):
+                sosu[j] = 1
+    a,b = 0,0
+    diff = 2147000000
+    for i in prime:
+        for j in prime:
+            if i+j == even and abs(i-j) < diff:
+                a,b = i,j
+                diff = abs(i-j)
+    print(a,b)
